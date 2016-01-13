@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  div(class="container")
+    form(class="form-signin" ng-submit="LogIn();" ng-model="authForm" id="authForm")
+      h1= title
+      h2(class="form-signin-heading") Please sign in
+      label(for="inputEmail" class="sr-only") Email address
+      input(type="email" id="inputEmail" ng-model="authData.email" class="form-control" placeholder="Email address" required autofocus)
+      label(for="inputPassword" class="sr-only") Password
+      input(type="password" id="inputPassword" ng-model="authData.password" class="form-control" placeholder="Password" required)
+      div(class="checkbox")
+        label
+          input(type="checkbox" value="remember-me" name="remember")
+          | Remember me
+        a(ng-href="/#register" style={float: 'right'}) Add company
+      input(class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in")
+    form(class="form-signin" ng-submit="registerMe();" ng-model="registerForm" id="registerForm" style={display: 'none'})
+      h1= title
+      h2(class="form-signin-heading") Please register
+      label(for="inputEmail" class="sr-only") Email address
+      input(type="email" id="inputEmail" ng-model="authData.email" class="form-control" placeholder="Email address" required autofocus)
+      label(for="CompanyName" class="sr-only") Company name
+      input(type="companyname" id="inputCN" ng-model="authData.CN" class="form-control" placeholder="Company name" required autofocus)
+      label(for="inputPassword" class="sr-only") Password
+      input(type="password" id="inputPassword" ng-model="authData.password" class="form-control" placeholder="Password" required)
+      div(class="checkbox")
+        a(ng-href="/#/" style={float: 'right'}) Home
+      input(class="btn btn-lg btn-primary btn-block" type="submit" value="Register")
+    div(ng-view)

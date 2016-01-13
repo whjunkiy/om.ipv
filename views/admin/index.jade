@@ -1,0 +1,43 @@
+nav(class="navbar navbar-default")
+  div(class="container-fluid")
+    div(class="navbar-header")
+      button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+        span(class="sr-only") Toggle navigation
+        span(class="icon-bar")
+        span(class="icon-bar")
+        span(class="icon-bar")
+      a(class="navbar-brand" ng-href="/#admin") Be OM!
+    div(id="navbar" class="navbar-collapse collapse")
+      ul(class="nav navbar-nav")
+        li
+          a(ng-href="/#projects") Projects
+        li
+          a(ng-href="#personal") Personal
+        li
+          a(ng-href="/#tasks") Tasks
+        li(class="dropdown")
+          a(class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+            |Preferences
+            span(class="caret")
+          ul(class="dropdown-menu")
+            li
+              a(ng-href="#") Personal info
+            li
+              a(ng-href="#") Another action
+            li
+              a(ng-href="#") Something else here
+            li(role="separator" class="divider")
+            li(class="dropdown-header") Nav header
+            li
+              a(ng-href="#") Separated link
+            li
+              a(ng-href="#") One more separated link
+      ul(class="nav navbar-nav navbar-right")
+        li
+          a(ng-href="/#messgaes") Messgaes
+        li
+          a(ng-href="/#info") Info
+        li
+          a(ng-href="/#logout") Logout
+div(id="main" ng-model='main' class="main")
+  |Hello THERE!

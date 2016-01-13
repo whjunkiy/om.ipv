@@ -1,0 +1,33 @@
+if user.status>2
+form(class="form-signin" ng-submit="AddPersona();" ng-model="PersonaAddForm" id="PersonaAddForm")
+  h2(class="form-signin-heading") Add new person
+  label(for="inputEmail" class="sr-only") Email address
+  span Email address
+  input(type="email" id="inputEmail" ng-model="AddPersona.email" class="form-control" placeholder="Email address" required autofocus)
+  br
+  label(for="inputName" class="sr-only") Full Name
+  span Full Name
+  input(type="text" id="inputName" ng-model="AddPersona.FullName" class="form-control" placeholder="Name")
+  br
+  label(for="inputPassword" class="sr-only") Password
+  span Password
+  input(type="password" id="inputPassword" ng-model="AddPersona.password" class="form-control" placeholder="Password" required)
+  br
+  label(for="inputStatus" class="sr-only") Status
+  span Status
+  select(ng-model="AddPersona.status" id="inputStatus" class="form-control")
+    option(value="1" selected) 1
+    option(value="2") 2
+    option(value="3") 3
+    option(value="4") 4
+  br
+  label(for="inputPlace" class="sr-only") Doljnostb
+  span Doljnostb
+  input(type="text" id="inputPlace" ng-model="AddPersona.place" class="form-control" placeholder="Dojnostb")
+  br
+  input(class="btn btn-lg btn-primary btn-block" type="submit" value="Add")
+h2 Personal:
+ul
+  each item in personas
+    li= item.name + ' (' + item.email + ')' + '  (' + item.place + ')'
+
